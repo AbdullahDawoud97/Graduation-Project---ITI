@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html style="overflow-y: scroll;">
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>SAP API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<style>
+.in {
+  float: left;
+  width: 33.33%;
+  position:relative;
+
+}
+.container {
+width: 100%;
+height: auto;
+
+}
+</style>
+
+</head>
+
+<body style="position: absolute;background-attachment: fixed;">
+
+<h1>Twitter Sentiment Analysis API</h1>
+ <br>
+<div class="container">	
+<div  class='in'>
+	<table >
+	<tr>
+	<th>Positive</th>
+	</tr>
+	{% for p in pos %}
+	<tr>	
+	<td style="padding: 15px;background-color: white;color:black;border-radius: 15px;text-align:left">
+	{{ p }}
+	</td>
+	</tr>
+
+	{% endfor %}
+	</table>
+</div>
+<div class='in'>
+	<table >
+	<tr>
+	<th>Neutral</th>
+	</tr>
+	{% for n in neu %}
+	<tr >	
+	<td style="padding: 15px;background-color: white;color:black;border-radius: 15px;text-align:left">
+	{{ n }}
+	</td>
+	</tr>
+	
+	{% endfor %}
+	</table>
+</div>
+<div class='in'>
+	<table  >
+	<tr>
+	<th>Negative</th>
+	</tr>
+	{% for g in neg %}
+	<tr>	
+	<td style="padding: 15px;background-color: white;color:black;border-radius: 15px;text-align:left">
+	{{ g }}
+	</td>
+	</tr>
+
+	{% endfor %}
+	</table>
+</div>
+</div>
+
+</body>
+</html>
